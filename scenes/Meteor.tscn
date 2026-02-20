@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5a4ynav86ee6"]
+
+[ext_resource type="Texture2D" uid="uid://cq5yn6ecuv8qf" path="res://assets/meteorBrown_big1.png" id="1_pkplu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaf7"]
+size = Vector2(100, 82)
+
+[node name="Meteor" type="StaticBody2D" unique_id=283614286]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=531734536]
+position = Vector2(0.5, 0)
+texture = ExtResource("1_pkplu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642399704]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_rsaf7")

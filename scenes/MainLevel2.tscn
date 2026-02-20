@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bpjerochyba63"]
+
+[ext_resource type="Script" uid="uid://bsuv2svmaqypq" path="res://scenes/PlatformBlue.gd" id="1_ea2xx"]
+[ext_resource type="PackedScene" uid="uid://b5a4ynav86ee6" path="res://scenes/Meteor.tscn" id="2_jow4u"]
+[ext_resource type="PackedScene" uid="uid://2l8dbfsh07v1" path="res://scenes/GreenShip.tscn" id="3_47nkk"]
+[ext_resource type="Script" uid="uid://x2rdmjyr1ttw" path="res://scenes/ObjectiveArea.gd" id="4_gdcge"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwfow"]
+radius = 64.63745
+
+[node name="MainLevel2" type="Node" unique_id=1329191610]
+
+[node name="PlatformMeteors" type="Node2D" parent="." unique_id=917040481]
+script = ExtResource("1_ea2xx")
+
+[node name="Meteor" parent="PlatformMeteors" unique_id=283614286 instance=ExtResource("2_jow4u")]
+position = Vector2(989, 537)
+
+[node name="Meteor2" parent="PlatformMeteors" unique_id=376743953 instance=ExtResource("2_jow4u")]
+position = Vector2(1089, 537)
+
+[node name="GreenShip" parent="." unique_id=1843440087 instance=ExtResource("3_47nkk")]
+position = Vector2(1039, 412)
+
+[node name="Objective" type="Area2D" parent="." unique_id=812762649]
+position = Vector2(0, -1)
+script = ExtResource("4_gdcge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objective" unique_id=137836909]
+position = Vector2(1053, 83)
+shape = SubResource("CircleShape2D_qwfow")
+
+[connection signal="body_entered" from="Objective" to="Objective" method="_on_ObjectiveArea_body_entered"]

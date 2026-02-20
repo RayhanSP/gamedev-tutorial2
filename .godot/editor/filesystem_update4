@@ -1,0 +1,5 @@
+res://default_env.tres
+res://scenes/Meteor.tscn
+res://scenes/MainLevel.tscn
+res://scenes/ObjectiveArea.gd
+res://scenes/MainLevel2.tscn
